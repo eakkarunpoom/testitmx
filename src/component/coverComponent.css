@@ -1,0 +1,13 @@
+.cover-bg{
+    height: 250px;
+    background-color: gray;
+}
+
+.cover-bg h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    font-size: 3rem;
+}

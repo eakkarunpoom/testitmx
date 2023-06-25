@@ -1,8 +1,9 @@
 import Item from "../models/item"
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-// import { useState } from "react";
-
+import { useState } from "react";
+import ModalEdit from "../component/ModalEdit";
+import { Card,Button,Row } from 'react-bootstrap';
+import "./listProduct.css"
+import ModalView from "./ModalView";
 interface ItemProps{
     items:Item[]
 }
@@ -12,41 +13,59 @@ interface DeleteProps{
 }
 
 interface EditProps{
-    onEditItem:(id:number)=>void
+    onEditItem:(id:number)=>void;
+    saveEdit:(id:number,name:string,detail:string,price:number,img:string)=>void
 }
 
-function ListItemComponent(props: ItemProps & DeleteProps & EditProps):JSX.Element {
-    // const [show, setShow] = useState(false);
+function ListItemComponent(props: ItemProps & DeleteProps & EditProps ):JSX.Element {
+    const [show, setShow] = useState(false);
+    const [showProduct, setShowProduct] = useState(false);
+    const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
+
+    const handleUpdate = (id: number) => {
+        const selectedItem = props.items.find((element) => element.id === id) || null;
+        setSelectedItem(selectedItem);
+        setShow(true);
+    };
+
+    const handleView = (id:number) => {
+        const viewItem = props.items.find((element) => element.id === id) || null;
+        setSelectedItem(viewItem);
+        setShowProduct(true)
+    }
+
+    console.log(show,showProduct)
+    const handleCloseProduct = () => setShowProduct(false);
+    const handleClose = () => setShow(false);
+
     return(
-        <>
+        <Row className="list-product" xs={1} md={1} lg={2}>
             {props.items.map((element)=>(
-                <div key={element.id}>
-                    <button onClick={()=>props.onEditItem(element.id)} >Edit</button>
-                    <button onClick={()=>props.onDeleteItem(element.id)}>Delete</button>
-                    <img src={element.img} />
-                    <p>{element.name}</p>
-                    <p>{element.detail}</p>
-                </div>
+                <Card style={{ width: '36rem' , margin: '8px'}} key={element.id}>
+                    <Row className="content-product">
+                        <div className="pic-product">
+                            <img src={element.img} />
+                        </div>
+                        <div className="title-product">
+                            <p>Name : {element.name}</p>
+                            <p>Detail : {element.detail}</p>
+                            <div className="btn-list-product">
+                                <Button onClick={()=>handleView(element.id)}>View</Button>
+                                <Button variant="success" onClick={() => { props.onEditItem(element.id); handleUpdate(element.id); }}>Edit</Button>
+                                <Button variant="danger" onClick={()=>props.onDeleteItem(element.id)}>Delete</Button>
+                            </div>
+                        </div>
+                    </Row>
+                </Card>
             ))}
-            {/* <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                <Modal.Title>Edit Product</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-                </Modal.Footer>
-            </Modal> */}
-        </>
-
+            {
+                show && <ModalEdit handleClose={handleClose} show={show} selectedItem={selectedItem} saveEdit={props.saveEdit}/>
+            }
+            {
+                showProduct && <ModalView handleCloseProduct={handleCloseProduct} showProduct={showProduct} selectedItem={selectedItem}/>
+            }
+        </Row>
     )
 }
 
