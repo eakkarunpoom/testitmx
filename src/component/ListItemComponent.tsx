@@ -48,8 +48,8 @@ function ListItemComponent(props: ItemProps & DeleteProps & EditProps ):JSX.Elem
                             <img src={element.img} />
                         </div>
                         <div className="title-product">
-                            <p>Name : {element.name}</p>
-                            <p>Detail : {element.detail}</p>
+                            <p>Name : <span>{element.name}</span></p>
+                            <p>Detail : <span>{element.detail}</span></p>
                             <div className="btn-list-product">
                                 <Button variant="dark" onClick={()=>handleView(element.id)}>View</Button>
                                 <Button variant="secondary" onClick={() => { props.onEditItem(element.id); handleUpdate(element.id); }}>Edit</Button>

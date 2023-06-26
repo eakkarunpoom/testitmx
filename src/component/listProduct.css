@@ -1,6 +1,7 @@
 .list-product {
     display: flex;
     justify-content: space-around;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .btn-list-product {
@@ -36,4 +37,8 @@
 .title-product p {
     color: blue;
     font-weight: bold;
+}
+
+.title-product span {
+    color: black;
 }
