@@ -46,26 +46,26 @@ function FormComponent({onAddItem}:FormProp):JSX.Element{
         <Container>
             <form onSubmit={saveItem}>
                 <div className='info-form'>
-                    <div>
+                    <div className='name-product'>
                         <label>Name Product : </label>
                         <input type="text" placeholder="Input name product" onChange={(e)=>setAddName(e.target.value)} value={addName}/>
                     </div>
-                    <div>
+                    <div className='detail-product'>
                         <label>Detail Product : </label>
                         <input type="text" placeholder="Input detail product" onChange={(e)=>setAddDetail(e.target.value)} value={addDetail}/>
                     </div>
-                    <div>
+                    <div className='price-product'>
                         <label>Price Product : </label>
                         <input type="number" placeholder="Input price product" onChange={(e)=>(setAddPrice(parseInt(e.target.value)))} value={addPrice}/>
                     </div>
-                    <div>
+                    <div className='img-product'>
                         <label>Image Product : </label>
                         <input type="file" accept="image/*" onChange={handleImageChange} />
                     </div>
+                    <div className='btn-form'>
+                        <Button type="submit" onClick={generateID} variant="dark">Add Product</Button>
+                    </div>      
                 </div>
-                <div className='btn-form'>
-                    <Button type="submit" onClick={generateID} variant="dark">Add Product</Button>
-                </div>            
             </form>
         </Container>
 

@@ -51,8 +51,8 @@ function ListItemComponent(props: ItemProps & DeleteProps & EditProps ):JSX.Elem
                             <p>Name : {element.name}</p>
                             <p>Detail : {element.detail}</p>
                             <div className="btn-list-product">
-                                <Button onClick={()=>handleView(element.id)}>View</Button>
-                                <Button variant="success" onClick={() => { props.onEditItem(element.id); handleUpdate(element.id); }}>Edit</Button>
+                                <Button variant="dark" onClick={()=>handleView(element.id)}>View</Button>
+                                <Button variant="secondary" onClick={() => { props.onEditItem(element.id); handleUpdate(element.id); }}>Edit</Button>
                                 <Button variant="danger" onClick={()=>props.onDeleteItem(element.id)}>Delete</Button>
                             </div>
                         </div>
