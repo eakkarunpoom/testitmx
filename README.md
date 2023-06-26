@@ -3,8 +3,11 @@
   1.2 task 2 ใช้ภาษา sql <br>
 2. node version v18.15.0
 3. วิธีการลงโปรแกรม <br>
-   3.1 git clone repo <br>
-   3.2 เปิดโฟล์เดอร์ testitmx ด้วย vs code <br>
+ 3.1 git clone repo <br>
+  ```
+  git clone https://github.com/eakkarunpoom/testitmx
+  ```
+  3.2 เปิดโฟล์เดอร์ testitmx ด้วย vs code <br>
    3.3 npm install เพื่อติดตั้ง node module <br>
     ![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/54f9c69b-f2cb-4c7a-9c39-11710e5d8f0a)
    3.4 npm start เพื่อดูหน้า web <br>
