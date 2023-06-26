@@ -1,0 +1,28 @@
+-- Answer #1
+SELECT * FROM
+(
+  SELECT agents.AGENT_CODE,agents.AGENT_NAME AGENT_NAME, SUM(orders.ORD_AMOUNT) SUM_ORDER_AMOUNT
+  FROM agents
+  LEFT JOIN orders ON orders.AGENT_CODE = agents.AGENT_CODE
+  GROUP BY agents.AGENT_CODE
+) agents_sum_amount ORDER BY SUM_ORDER_AMOUNT DESC LIMIT 1;
+
+
+-- Answer #2
+SELECT
+customer.CUST_CODE,
+customer.CUST_NAME,
+SUM(orders.ORD_AMOUNT) TOTAL_SPENT
+FROM customer
+LEFT JOIN orders ON customer.CUST_CODE = orders.CUST_CODE
+GROUP BY customer.CUST_CODE, customer.CUST_NAME HAVING TOTAL_SPENT > 5000
+ORDER BY customer.CUST_CODE ASC;
+
+
+-- Answer #3
+SELECT
+agents.AGENT_CODE, COUNT(orders.ORD_NUM) TOTAL_NUMBER_OF_DATE
+FROM agents LEFT JOIN orders ON agents.AGENT_CODE = orders.AGENT_CODE
+WHERE orders.ORD_DATE >= '2008-07-01' AND orders.ORD_DATE <= '2008-07-31'
+GROUP BY agents.AGENT_CODE
+ORDER BY agents.AGENT_CODE ASC
