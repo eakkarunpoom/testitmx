@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+1. ภาษาที่ใช้ <br> 
+  1.1 task 1 ใช้ภาษา typescript และ Reactjs <br>
+  1.2 task 2 ใช้ภาษา sql <br>
+2. node version v18.15.0
+3. วิธีการลงโปรแกรม <br>
+   3.1 git clone repo <br>
+   3.2 เปิดโฟล์เดอร์ testitmx ด้วย vs code <br>
+   3.3 npm install เพื่อติดตั้ง node module <br>
+    ![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/54f9c69b-f2cb-4c7a-9c39-11710e5d8f0a)
+   3.4 npm start เพื่อดูหน้า web <br>
+    ![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/d4f79af2-8268-4263-b076-76372c5d2bef)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### ตัวอย่างหน้าเว็บ
+![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/1363e0e6-c078-440e-905d-120935203555)
 
-## Available Scripts
+### ตัวอย่าง SQL
+ข้อ 1
+![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/cf24b12a-321c-4e05-9e82-c80d9c2b8428)
 
-In the project directory, you can run:
+ข้อ 2
+![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/ac5557a5-248d-4080-83ce-18d208ac6ab6)
 
-### `npm start`
+ข้อ 3
+![image](https://github.com/eakkarunpoom/testitmx/assets/117998772/277f4c79-26f0-4c1d-9f29-657df5840f59)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
